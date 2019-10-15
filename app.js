@@ -29,7 +29,6 @@ async function mail(password) {
         }
     });
 
-    // send mail with defined transport object
     let info = await transporter.sendMail({
         from: 'scott@primeacademy.io', // sender address
         to: 'scottbromander@gmail.com', // list of receivers
