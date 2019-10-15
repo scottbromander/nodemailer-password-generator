@@ -30,10 +30,12 @@ async function mail(password) {
     });
 
     let info = await transporter.sendMail({
-        from: 'scott@primeacademy.io', // sender address
-        to: 'scottbromander@gmail.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world?', // plain text body
-        html: `<b>${password}</b>` // html body
+        from: process.env.FROM, // sender address
+        to: process.env.TO, // list of receivers
+        subject: 'Your password', // Subject line
+        text: password, // plain text body
+        html: `
+            <h1>${password}<ha>
+        ` // html body
     });
 }
